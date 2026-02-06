@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserProfile Instagram ....</title>
+</head>
+
+<body>
+
+    <h1>InstaGram 📱</h1>
+    <hr>
+    <p>Welcome to <b>
+            <%= UserName %>
+        </b> Profile Page</p>
+    <br>
+    <p>Bio ✨ : Working as a SDE at Meta <br>
+        Age : 23 and Single <br>
+        Hobbiess : Coding Runnig Singing
+    </p>
+    <button>Follow</button>
+    <% if(Following < 200) { %>
+        <b style="background-color: red;">Following : <%= Following %></b>
+        <% } else { %>
+            <b style="background-color: green;">Following : <%= Following %></b>
+            <% } %>
+                <button>Posts : 10</button>
+                <hr>
+                <h4>Follower's whoo follow's <%= UserName %>
+                </h4>
+                <ul>
+                    <% for (name of Followers) { %>
+                        <li>
+                            <%= name %>
+                        </li>
+                        <% } %>
+                </ul>
+
+</body>
+
+</html>
