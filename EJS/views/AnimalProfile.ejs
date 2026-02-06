@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Profile Instagrammm</title>
+</head>
+
+<body>
+    <h1>Welcome to <%= User.name %> Profile Page</h1>
+    <p>
+    <h3>Bio</h3>
+    <hr>
+    Hello I am <%= User.name %> 😽 <br>
+        My Color is Brown <br>
+        I love using Instagrammm 💗 <br>
+        People Loves me a lot 😄 <br>
+        </p>
+        <hr>
+        <button>Follow</button>
+        <p>Number of Followers : <%= User.followers %>
+        </p>
+        <b>Following : <%= User.following %></b>
+        <br>
+        <b>Post : 30</b>
+        <h3>Post Uploaded by <%= User.name %>
+        </h3>
+        <% for (post of User.posts) { %>
+            <img style="height: 200px; width: 200px; object-fit: cover;" src="<%= post.image %>" alt="">
+            <p>Number of Likes : <%=post.likes%>
+            </p>
+            <p>Number of Comments : <%=post.comments%>
+            </p>
+            <% } %>
+
+</body>
+
+</html>
