@@ -10,6 +10,10 @@ app.set("view engine", "ejs")
 // Setting Path
 app.set("views", path.join(__dirname, "/views")) // Solving Error : )
 
+
+// Serving Static File 
+app.use(express.static(path.join(__dirname, "public")))
+
 // Backend-Dev/EJS/views  
 
 // Rendering First EJS Template 
