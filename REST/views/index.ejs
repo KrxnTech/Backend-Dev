@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show All Post - Blog Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        * {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-family: "Caveat Brush", cursive;
+            letter-spacing: 2px;
+        }
+
+        .PostDiv {
+            background-color: pink;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .UserName {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            transition: 0.2s all ease-in-out;
+        }
+
+        button:hover {
+            background-color: darkred;
+            cursor: pointer;
+            color: white;
+        }
+
+        .AddNewPost {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            transition: 0.2s all ease-in-out;
+            background-color: white;
+            margin: 20px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .AddNewPost:hover {
+            background-color: darkred;
+            cursor: pointer;
+            color: white;
+        }
+
+        .Content {
+            padding: 10px;
+            color: black;
+        }
+
+        .TopDiv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="TopDiv">
+        <h1>Quora Post Blog Application</h1>
+        <a href="http://localhost:3000/posts/new" class="AddNewPost">Add New Post ✨</a>
+    </div>
+    <hr>
+    <% for (post of posts) { %>
+        <div class="PostDiv">
+            <p class="UserName"><b>UserName</b> : @<%=post.username%>
+            </p>
+            <p class="Content"><b>Content</b> : <%=post.content%>
+            </p>
+            <button>Edit</button>
+            <button>Delete</button>
+            <button>View In Detail</button>
+        </div>
+        <% } %>
+
+
+
+</body>
+
+</html>
