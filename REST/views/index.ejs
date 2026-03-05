@@ -78,6 +78,24 @@
             justify-content: center;
             align-items: center;
         }
+
+        .ViewInDetail {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            transition: 0.2s all ease-in-out;
+            background-color: white;
+            margin: 20px;
+            text-decoration: none;
+            color: black;
+
+        }
+
+        .ViewInDetail:hover {
+            background-color: darkred;
+            cursor: pointer;
+            color: white;
+        }
     </style>
 </head>
 
@@ -93,9 +111,13 @@
             </p>
             <p class="Content"><b>Content</b> : <%=post.content%>
             </p>
-            <button>Edit</button>
-            <button>Delete</button>
-            <button>View In Detail</button>
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <a class="ViewInDetail" href="http://localhost:3000/posts/<%=post.id%>/edit">Edit</a>
+                <form action="http://localhost:3000/posts/<%=post.id%>/?_method=DELETE" method="POST">
+                    <button class="ViewInDetail">Delete</button>
+                </form>
+                <a class="ViewInDetail" href="http://localhost:3000/posts/<%=post.id%>">View In Detail</a>
+            </div>
         </div>
         <% } %>
 
